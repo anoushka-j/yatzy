@@ -31,27 +31,44 @@ const Dice = (function () {
 
 // VARIABLE DECLARATION:
 let diceValues = [];
-let rollAgain; //boolean flag with player input
-
-const result = Dice.roll();
-console.log(`You rolled a ${result}`);
 
 // rolling five dice
 for (let currentDice = 0; currentDice < 5; currentDice++) {
 
+    let roll = document.createElement("p");
+    let displaySet = document.createElement("p");
+
     diceValues[currentDice] = Dice.roll(); //saving dice value to array
-    Dice.showHistory();
-    console.log(diceValues);
+
+    roll.textContent = "On dice " + (currentDice + 1) + ", you rolled: " + diceValues[currentDice];
+    displaySet.textContent = "This is your current set: " + diceValues;
+
+    document.body.appendChild(roll);
+    document.body.appendChild(displaySet);
+
+    // Dice.showHistory();
 
     // asking to re-roll three times
     for (let i = 0; i < 3; i++) {
 
-        // checking if player wants to re-roll current dice
-        if (rollAgain) {
+        if (confirm("Re-roll dice? OK to re-roll; cancel to roll next dice")) { //OK
+
+            let roll = document.createElement("p");
+            let displaySet = document.createElement("p");
+
             diceValues[currentDice] = Dice.roll(); //saving dice value to array
-            Dice.showHistory();
-            console.log(diceValues);
-        } else {
+
+            diceValues[currentDice] = Dice.roll(); //saving dice value to array
+
+            roll.textContent = "After re-rolling, on dice " + (currentDice + 1) + ", you rolled: " + diceValues[currentDice];
+            displaySet.textContent = "This is your current set: " + diceValues;
+
+            document.body.appendChild(roll);
+            document.body.appendChild(displaySet);
+
+            // Dice.showHistory();
+
+        } else { //NO
             break;
         }
 
