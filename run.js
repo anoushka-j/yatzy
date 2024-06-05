@@ -48,7 +48,9 @@ for (let currentDice = 0; currentDice < 5; currentDice++) {
 
         // checking if player wants to re-roll current dice
         if (rollAgain) {
-            diceValues[currentDice] = Dice.roll(); //saving dice value to array
+            dice_roll = Dice.roll()
+            console.log("re-roll" + dice_roll)
+            diceValues[currentDice] = dice_roll; //saving dice value to array
             Dice.showHistory();
             console.log(diceValues);
         } else {
