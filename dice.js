@@ -29,8 +29,4 @@ const Dice = (function () {
     return entity;
 }());
 
-Dice.showHistory();
-Dice.roll();
-Dice.roll();
-Dice.roll();
-Dice.showHistory();
+export { Dice };
