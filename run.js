@@ -15,12 +15,13 @@ const Dice = (function () {
 
 let diceValues = []; //array to save dice values
 let rollCount = [0, 0, 0, 0, 0]; //array to track # of rolls for each dice
+
+
 let scoreButton = document.createElement("button");
 scoreButton.textContent = "SCORE CURRENT SET";
 document.body.appendChild(scoreButton);
-
 scoreButton.addEventListener("click", function(){
-    dice_vals = diceValues
+    let dice_vals = diceValues
     let score = 0; 
 
     // Yahtzee
@@ -98,7 +99,6 @@ scoreButton.addEventListener("click", function(){
     
         
 });
-
 // PROCESS: rolling five dice
 for (let currentDice = 0; currentDice < 5; currentDice++) {
 
