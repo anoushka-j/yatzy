@@ -78,7 +78,7 @@ function count_score(dice_vals) {
         score += 40 
     }
     
-
+ 
 
     return score
 
